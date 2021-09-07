@@ -1,6 +1,7 @@
 /*----- Body -----*/
 body {
     display: flex;
+    flex-direction: column;
 }
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 /* Title animation */
@@ -9,12 +10,12 @@ body {
   margin: 0;
   padding: 0;
 }
-body, html {
+/* body, html {
    overflow: hidden;
-}
+} */
 .container {
-  width: 100%;
-  height: 100vh;
+  /* width: 100%; */
+  /* height: 100vh; */
   background: #232323;
 
   display: flex;
@@ -221,6 +222,8 @@ h1 > span {
 /* ---------- Navbar contacts -----------*/
 .contact > ul {
   display: flex; 
+  margin-bottom: 3em;
+  padding-left: 0;
 }
 .contact > ul > a {
   background-color:#ffb510;
@@ -234,26 +237,30 @@ h1 > span {
 .contact > ul > a > li > i {
   font-size:2em; 
 }
+.contact > ul > a > li > i:hover {
+  color: #e91e63;
+}
 
 /* --------- Projects /main part ----------*/
-main, header {
+/* main, header {
     width :50%;
+} */
+
+header {
+  background: #232323;
+
 }
 main  {
-    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding : 50px;
 }
-/* main > h2 {
+main > h2 {
     color: #e91e63;
     font-family: 'Lato';
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 5px;
-} */
+}
 
 .main-container {
   display: flex;
@@ -264,9 +271,104 @@ main  {
 .card {
   border:2px solid #e91e63;
 }
+.card-title {
+  color: #e91e63;
+  font-family: 'Poppins';
+}
+.card-body {
+  background-color: #ffb510;
+}
 
-/* TODO 
-/* DONE - changer font des titres */
-/* DONE - barre de contact */ 
-/* - appliquer du Sass pour changer l'aspect des tooltips bootstrap*/
-/* - gérer le responsive sur toute la page et le scroll sur la partie main*/
+/* ---------- Présentation ------------ */
+.presentation {
+  background-color:#ffb510;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentation > h2 {
+  font-family: 'Poppins';
+  background-color: #ffb510;
+  position: relative;
+  top: -20px;
+  font-weight: bold;
+  min-width: 350px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border-top: 2px solid #e91e63;
+
+}
+
+.presentation {
+  border-top: 2px solid #e91e63;
+}
+
+.presentation > ul {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 4rem;
+}
+
+.presentation_button_projects, .presentation_button_skills, .presentation_button_contact {
+  display: flex;
+  margin: 10px;
+  height: 40px;
+  width: 110px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.presentation > ul > a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Lato';
+  font-size: smaller;
+}
+.presentation_button_skills {
+  border: 2px solid #232323;
+  background-color: #232323;
+}
+
+.presentation_button_projects {
+  border: 2px solid #232323;
+}
+
+.presentation_button_contact {
+  background-color: #232323;
+} 
+
+/* ------------ Competences -----------*/  
+.competences {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.competences > h2 {
+  font-family: 'Poppins';
+  background-color: white;
+  position: relative;
+  top: -20px;
+  font-weight: bold;
+  min-width: 350px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border-top: 2px solid #e91e63;
+  font-size: 20px;
+}
+
+.progress_bars {
+  width: 40%;
+}
+
+.progress {
+  margin-bottom: 10px;
+}
+
