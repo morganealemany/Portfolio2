@@ -302,14 +302,14 @@ h1 > span {
 }
 
 /* ------------ Competences -----------*/  
-.competences {
+#competences {
   border-top: 2px solid #e91e63;
   display: flex;
   flex-direction: column;
   align-items: center;  
 }
 
-.competences > h2 {
+#competences > h2 {
   font-family: 'Poppins';
   background-color: white;
   position: relative;
@@ -354,41 +354,54 @@ th {
   font-size: 16px;
 }
 
-.html > th, .php > th, .git > th {
+.html > th {
+  color: #8e44ad;
+}
+.css > th {
+  color: #2980b9;
+}
+.bootstrap > th {
+  color: #c0392b;
+}
+.php > th {
+  color: #16a085;
+} 
+.symfony > th {
   color: #ffb510;
 }
+.javascript > th {
+  color: #e91e63;
+} 
+.git > th {
+
+} 
+
 .html .progress_bar {
-  background-color:#ffb510;
+  background-color:#8e44ad;
   width: 90%;
 }
-.css > th, .symfony > th {
-  color: #e91e63;
-}
 .css .progress_bar {
-  background-color:#e91e63;
+  background-color:#2980b9;
   width: 50%;
 }
-.bootstrap > th, .javascript > th {
-  color: #232323;
-}
 .bootstrap .progress_bar {
-  background-color: #232323;
+  background-color: #c0392b;
   width: 60%;
 }
 .php .progress_bar {
-  background-color:#ffb510;
+  background-color:#16a085;
   width: 90%;
 }
 .symfony .progress_bar {
-  background-color:#e91e63;
+  background-color:#ffb510;
   width: 90%;
 }
 .javascript .progress_bar {
-  background-color: #232323;
-  width: 30%;
+  background-color: #e91e63;
+  width: 40%;
 }
 .git .progress_bar {
-  background-color:#ffb510;
+  background-color:#232323;
   width: 90%;
 }
 .bar {
@@ -496,49 +509,6 @@ th {
   color: #e91e63;
 }
 
-/* .skills_container {
-  display: grid;
-  color: white;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  margin-bottom: 4rem;
-}
-
-.skills_container  div {
-  min-width: 120px;
-  min-height: 100px;
-}
-
-.skills_one {
-  grid-column:5/6;
-  grid-row:5/6;
-}
-
-.skills_two {
-  grid-column:1/6;
-  grid-row:1/1;
-}
-.skills_three {
-  grid-column:5/6;
-  grid-row:2/3;
-}
-.skills_four {
-  grid-column:2/3;
-  grid-row:4/5;
-}
-.skills_five {
-  grid-column:3/4;
-  grid-row:5/6;
-}
-.skills_six {
-  grid-column:4/5;
-  grid-row:3/4;
-}
-.skills_seven {
-  grid-column:2/3;
-  grid-row:2/3;
-} */
-
 /* ----------- Projets ----------- */
 
 .row {
@@ -555,14 +525,14 @@ th {
   background-color: #ffb510;
 }
 
-.projets {
+#projets {
   border-top: 2px solid #e91e63;
   display: flex;
   flex-direction: column;
   align-items: center;  
 }
 
-.projets > h2 {
+#projets > h2 {
   font-family: 'Poppins';
   background-color: white;
   position: relative;
@@ -578,7 +548,7 @@ th {
 
 /* -------- Contacts ---------- */
 
-.contacts {
+#contacts {
   border-top: 2px solid #e91e63;
   background-color:#ffb510;
   display: flex;
@@ -586,7 +556,7 @@ th {
   align-items: center;
 }
 
-.contacts > h2 {
+#contacts > h2 {
   font-family: 'Poppins';
   background-color: #ffb510;
   position: relative;
@@ -599,6 +569,9 @@ th {
   border-top: 2px solid #e91e63;
   font-size: 20px;
 }
+
+/* Boutons de contacts */
+
 .contact > ul {
   display: flex; 
   margin-bottom: 3em;
@@ -610,6 +583,10 @@ th {
   color:#ffb510; 
   margin: 10px;
 }
+
+.contact > ul > a:hover {
+  background-color: #e91e63;
+}
 .contact > ul > a > li {
   padding: 10px 20px;
 }
@@ -617,5 +594,18 @@ th {
   font-size:2em; 
 }
 .contact > ul > a > li > i:hover {
-  color: #e91e63;
+  color: #ffb510;
+}
+
+/* -------- Footer ---------- */
+footer {
+  background-color: #232323;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer p {
+  color: grey;
+  margin-bottom: 0;
 }
