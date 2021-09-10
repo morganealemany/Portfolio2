@@ -3,8 +3,30 @@ body {
     display: flex;
     flex-direction: column;
 }
+/* --------- Header ---------*/
+header {
+  background: #232323;
+  
+}
+main  {
+  display: flex;
+  flex-direction: column;
+}
+main > h2 {
+  color: #e91e63;
+  font-family: 'Lato';
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
-/* Title animation */
+/* ---------- Title animation ------------ */
 
 * {
   margin: 0;
@@ -219,68 +241,9 @@ h1 > span {
   }
 } */
 
-/* ---------- Navbar contacts -----------*/
-.contact > ul {
-  display: flex; 
-  margin-bottom: 3em;
-  padding-left: 0;
-}
-.contact > ul > a {
-  background-color:#ffb510;
-  border-radius: 50%;
-  color:#232323; 
-  margin: 10px;
-}
-.contact > ul > a > li {
-  padding: 10px 20px;
-}
-.contact > ul > a > li > i {
-  font-size:2em; 
-}
-.contact > ul > a > li > i:hover {
-  color: #e91e63;
-}
-
-/* --------- Projects /main part ----------*/
-/* main, header {
-    width :50%;
-} */
-
-header {
-  background: #232323;
-
-}
-main  {
-    display: flex;
-    flex-direction: column;
-}
-main > h2 {
-    color: #e91e63;
-    font-family: 'Lato';
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-}
-
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.card {
-  border:2px solid #e91e63;
-}
-.card-title {
-  color: #e91e63;
-  font-family: 'Poppins';
-}
-.card-body {
-  background-color: #ffb510;
-}
-
 /* ---------- Présentation ------------ */
 .presentation {
+  border-top: 2px solid #e91e63;
   background-color:#ffb510;
   display: flex;
   flex-direction: column;
@@ -300,18 +263,13 @@ main > h2 {
   border-top: 2px solid #e91e63;
 
 }
-
-.presentation {
-  border-top: 2px solid #e91e63;
-}
-
 .presentation > ul {
   display: flex;
   padding-left: 0;
   margin-bottom: 4rem;
 }
 
-.presentation_button_projects, .presentation_button_skills, .presentation_button_contact {
+.presentation_button {
   display: flex;
   margin: 10px;
   height: 40px;
@@ -322,6 +280,12 @@ main > h2 {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
+  border: 2px solid #232323;
+  transition-property: border;
+}
+
+.presentation_button:hover {
+  border: none;
 }
 
 .presentation > ul > a {
@@ -329,22 +293,17 @@ main > h2 {
   color: white;
   font-family: 'Lato';
   font-size: smaller;
+  transition-property: font-size;
+  transition-duration: 1s;
 }
-.presentation_button_skills {
-  border: 2px solid #232323;
-  background-color: #232323;
+.presentation > ul > a:hover {
+  color: #e91e63;
+  font-size: larger;
 }
-
-.presentation_button_projects {
-  border: 2px solid #232323;
-}
-
-.presentation_button_contact {
-  background-color: #232323;
-} 
 
 /* ------------ Competences -----------*/  
 .competences {
+  border-top: 2px solid #e91e63;
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -364,11 +323,299 @@ main > h2 {
   font-size: 20px;
 }
 
-.progress_bars {
-  width: 40%;
+table {
+  table-layout: fixed;
+  font-family: 'Lato';
+  font-size: 1.3em;
+  border-collapse: separate;
+  border-spacing: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 4rem;
 }
 
-.progress {
-  margin-bottom: 10px;
+th {
+  width : 140px;
 }
 
+.max_bar {
+  background-color : lightgray;
+  height: 25px;
+  width : 100%;
+  border-radius: 10px;
+}
+
+.progress_bar {
+  height : 25px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+.html > th, .php > th, .git > th {
+  color: #ffb510;
+}
+.html .progress_bar {
+  background-color:#ffb510;
+  width: 90%;
+}
+.css > th, .symfony > th {
+  color: #e91e63;
+}
+.css .progress_bar {
+  background-color:#e91e63;
+  width: 50%;
+}
+.bootstrap > th, .javascript > th {
+  color: #232323;
+}
+.bootstrap .progress_bar {
+  background-color: #232323;
+  width: 60%;
+}
+.php .progress_bar {
+  background-color:#ffb510;
+  width: 90%;
+}
+.symfony .progress_bar {
+  background-color:#e91e63;
+  width: 90%;
+}
+.javascript .progress_bar {
+  background-color: #232323;
+  width: 30%;
+}
+.git .progress_bar {
+  background-color:#ffb510;
+  width: 90%;
+}
+.bar {
+  width : 75%;
+  vertical-align:middle;
+}
+/* ----------- Soft-skills ----------- */
+
+.soft_skills {
+  background-color: #232323;
+  border-top: 2px solid #e91e63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.soft_skills > h2 {
+  font-family: 'Poppins';
+  background-color: #232323;
+  color: white;
+  position: relative;
+  top: -20px;
+  font-weight: bold;
+  min-width: 350px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border-top: 2px solid #e91e63;
+  font-size: 20px;
+}
+
+/* Soft skills animation*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+.soft_skills {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  height : 200px;
+}
+
+.text {
+  width: 400px;
+
+}
+
+.text p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  color: white;
+}
+
+.word {
+  position: absolute;
+  width: 280px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  /* float: left; */
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+  color: #8e44ad;
+}
+
+.belize {
+  color: #2980b9;
+}
+
+.pomegranate {
+  color: #c0392b;
+}
+
+.green {
+  color: #16a085;
+}
+
+.yellow {
+  color: #ffb510;
+}
+
+.rose {
+  color: #e91e63;
+}
+
+/* .skills_container {
+  display: grid;
+  color: white;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  margin-bottom: 4rem;
+}
+
+.skills_container  div {
+  min-width: 120px;
+  min-height: 100px;
+}
+
+.skills_one {
+  grid-column:5/6;
+  grid-row:5/6;
+}
+
+.skills_two {
+  grid-column:1/6;
+  grid-row:1/1;
+}
+.skills_three {
+  grid-column:5/6;
+  grid-row:2/3;
+}
+.skills_four {
+  grid-column:2/3;
+  grid-row:4/5;
+}
+.skills_five {
+  grid-column:3/4;
+  grid-row:5/6;
+}
+.skills_six {
+  grid-column:4/5;
+  grid-row:3/4;
+}
+.skills_seven {
+  grid-column:2/3;
+  grid-row:2/3;
+} */
+
+/* ----------- Projets ----------- */
+
+.row {
+  margin:0 20px 50px;
+}
+.card {
+  border:2px solid #e91e63;
+}
+.card-title {
+  color: #e91e63;
+  font-family: 'Poppins';
+}
+.card-body {
+  background-color: #ffb510;
+}
+
+.projets {
+  border-top: 2px solid #e91e63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.projets > h2 {
+  font-family: 'Poppins';
+  background-color: white;
+  position: relative;
+  top: -20px;
+  font-weight: bold;
+  min-width: 350px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border-top: 2px solid #e91e63;
+  font-size: 20px;
+}
+
+/* -------- Contacts ---------- */
+
+.contacts {
+  border-top: 2px solid #e91e63;
+  background-color:#ffb510;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts > h2 {
+  font-family: 'Poppins';
+  background-color: #ffb510;
+  position: relative;
+  top: -20px;
+  font-weight: bold;
+  min-width: 350px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border-top: 2px solid #e91e63;
+  font-size: 20px;
+}
+.contact > ul {
+  display: flex; 
+  margin-bottom: 3em;
+  padding-left: 0;
+}
+.contact > ul > a {
+  background-color:#232323;
+  border-radius: 50%;
+  color:#ffb510; 
+  margin: 10px;
+}
+.contact > ul > a > li {
+  padding: 10px 20px;
+}
+.contact > ul > a > li > i {
+  font-size:2em; 
+}
+.contact > ul > a > li > i:hover {
+  color: #e91e63;
+}
