@@ -253,20 +253,20 @@ h1 > span {
 .presentation > h2 {
   font-family: 'Poppins';
   background-color: #ffb510;
-  position: relative;
+  position: initial;
   top: -20px;
   font-weight: bold;
-  min-width: 350px;
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
-  border-top: 2px solid #e91e63;
-
+  border: none;
+  width : auto;
+  font-size: 20px;
 }
 .presentation > ul {
-  display: flex;
+  display: block;
   padding-left: 0;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .presentation_button {
@@ -312,14 +312,14 @@ h1 > span {
 #competences > h2 {
   font-family: 'Poppins';
   background-color: white;
-  position: relative;
+  position: initial;
   top: -20px;
   font-weight: bold;
-  min-width: 350px;
+  width: auto;
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
-  border-top: 2px solid #e91e63;
+  border: none;
   font-size: 20px;
 }
 
@@ -405,9 +405,10 @@ th {
   width: 90%;
 }
 .bar {
-  width : 75%;
+  width : 40%;
   vertical-align:middle;
 }
+
 /* ----------- Soft-skills ----------- */
 
 .soft_skills {
@@ -422,14 +423,14 @@ th {
   font-family: 'Poppins';
   background-color: #232323;
   color: white;
-  position: relative;
+  position: initial;
   top: -20px;
   font-weight: bold;
-  min-width: 350px;
+  width: auto;
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
-  border-top: 2px solid #e91e63;
+  border : none;
   font-size: 20px;
 }
 
@@ -438,23 +439,26 @@ th {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 
 .soft_skills {
-  display: flex;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 40px;
-  height : 200px;
+  font-size: 20px;
+  height : 130px;
 }
 
 .text {
-  width: 400px;
-
+  width: 300px;
 }
 
 .text p {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   vertical-align: top;
   margin: 0;
   color: white;
+}
+
+.text p span {
+  text-align: center;
 }
 
 .word {
@@ -514,16 +518,6 @@ th {
 .row {
   margin:0 20px 50px;
 }
-.card {
-  border:2px solid #e91e63;
-}
-.card-title {
-  color: #e91e63;
-  font-family: 'Poppins';
-}
-.card-body {
-  background-color: #ffb510;
-}
 
 #projets {
   border-top: 2px solid #e91e63;
@@ -535,17 +529,53 @@ th {
 #projets > h2 {
   font-family: 'Poppins';
   background-color: white;
-  position: relative;
+  position: initial;
   top: -20px;
   font-weight: bold;
-  min-width: 350px;
+  width: auto;
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
-  border-top: 2px solid #e91e63;
+  border: none;
   font-size: 20px;
 }
-
+.col > a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.col > a > img {
+  width: 100%;
+  border-radius: 3%;
+  box-shadow: 10px 5px 5px rgb(21, 24, 24);
+  /* position: relative; */
+  overflow: hidden;
+  /* display: block; */
+}
+.project_text {
+  display: none;
+  text-align: center;
+  width: 100%;
+  /* border-radius: 3%;
+  box-shadow: 10px 5px 5px rgb(21, 24, 24); */
+}
+.col > a .project_text h3 {
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 50px;
+}
+.col > a .project_text p {
+  font-style: italic;
+}
+.col > a:hover img {
+  display: none;
+}
+.col > a:hover .project_text {
+  display: flex;
+  flex-direction: column;
+}
 /* -------- Contacts ---------- */
 
 #contacts {
@@ -559,14 +589,14 @@ th {
 #contacts > h2 {
   font-family: 'Poppins';
   background-color: #ffb510;
-  position: relative;
+  position: initial;
   top: -20px;
   font-weight: bold;
-  min-width: 350px;
+  width: auto;
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
-  border-top: 2px solid #e91e63;
+  border: none;
   font-size: 20px;
 }
 
@@ -574,6 +604,7 @@ th {
 
 .contact > ul {
   display: flex; 
+  flex-direction: column;
   margin-bottom: 3em;
   padding-left: 0;
 }
@@ -608,4 +639,42 @@ footer {
 footer p {
   color: grey;
   margin-bottom: 0;
+}
+
+
+
+@media screen and (min-width: 350px) 
+{
+  .soft_skills > h2, #competences > h2, .presentation > h2, #projets > h2, #contacts > h2 {
+    position: relative;
+    border-top: 2px solid #e91e63;
+    width: 50%;
+  }
+  .presentation > ul {
+    display: flex;
+    margin-bottom: 4rem;
+  }
+  .contact > ul {
+    flex-direction: row;
+  }
+  .bar {
+    width : 50%;
+  }
+}
+
+@media screen and (min-width: 500px) 
+{
+  .soft_skills {
+    font-size: 40px;
+    height: 200px;
+  }
+  .text p {
+    display: inline-block;
+  }  
+  .text p span {
+    text-align: none;
+  }
+  .bar {
+    width : 75%;
+  }
 }
