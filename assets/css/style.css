@@ -2,6 +2,7 @@
 body {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 /* --------- Header ---------*/
 header {
@@ -515,6 +516,12 @@ th {
 
 /* ----------- Projets ----------- */
 
+.item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .row {
   margin:0 20px 50px;
 }
@@ -523,7 +530,8 @@ th {
   border-top: 2px solid #e91e63;
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
+  padding: 0px 30px 30px 30px;
 }
 
 #projets > h2 {
@@ -539,29 +547,79 @@ th {
   border: none;
   font-size: 20px;
 }
-.col > a {
+.item {
+  margin: 40px 10px;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  transform: translate3d(0, -1px, 0);
+}
+.item:hover {
+  transform: translate3d(0, -10px, 0);
+}
+.item a {
   text-decoration: none;
   color: black;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
-.col > a > img {
-  width: 100%;
-  border-radius: 3%;
-  box-shadow: 10px 5px 5px rgb(21, 24, 24);
-  /* position: relative; */
-  overflow: hidden;
-  /* display: block; */
+.item_body {
+  padding: 25px;
 }
+.item_title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffb510;
+}
+.carousel {
+  position: relative;
+}
+.carousel_panorama {
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
+}
+.carousel_panorama::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.carousel_item {
+  float: left;
+}
+
+.carousel_next, .carousel_prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #FFF url(../images/arrow-right.png) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: -10px;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.carousel_next:hover, .carousel_prev:hover {
+  transform: scale(1.2);
+}
+.carousel_prev {
+  background-image: url(../images/arrow-left.png);
+  right: auto;
+  left : -10px;
+}
+.carousel_next-hidden, .carousel_prev-hidden {
+  opacity: 0;
+}
+/*
 .project_text {
   display: none;
   text-align: center;
   width: 100%;
-  /* border-radius: 3%;
-  box-shadow: 10px 5px 5px rgb(21, 24, 24); */
+   border-radius: 3%;
+  box-shadow: 10px 5px 5px rgb(21, 24, 24);
 }
-.col > a .project_text h3 {
+ .col > a .project_text h3 {
   font-weight: bold;
   color: #e91e63;
   margin-bottom: 50px;
@@ -576,6 +634,7 @@ th {
   display: flex;
   flex-direction: column;
 }
+ */ 
 /* -------- Contacts ---------- */
 
 #contacts {
