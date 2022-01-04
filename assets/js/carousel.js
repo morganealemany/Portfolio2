@@ -1,3 +1,6 @@
+/**
+ * Gère le carousel des projets
+ */
 class Carousel {
 
     /**
@@ -112,7 +115,7 @@ class Carousel {
                 return
             }
         }
-        else if (index >= this.items.length || (this.items[this.currentItem + this.options.slidesVisible] === undefined && index > this.currentItem)) {
+        else if (index >= this.items.length || (this.items[this.currentItem + this.slidesVisible] === undefined && index > this.currentItem)) {
             if (this.options.loop) {
                 index = 0
             } else {
